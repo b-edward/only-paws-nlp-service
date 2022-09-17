@@ -6,7 +6,6 @@ cohere.init('NB2Eu5tMmeqWJC9PEAt59F5Bm7jAqj6QZYdWOfUI');
 // Route to get an answer to the prompt
 router.get('/:question', async (req, res) => {
     question = req.params.question;
-    console.log(question);
     // Use Cohere NLP to generate response
     await (async () => {
         const response = await cohere.generate({ prompt: question });
