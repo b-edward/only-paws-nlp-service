@@ -3,10 +3,10 @@ const router = express.Router();
 const cohere = require('cohere-ai');
 cohere.init('NB2Eu5tMmeqWJC9PEAt59F5Bm7jAqj6QZYdWOfUI');
 
-let question = 'Hi, can you babysit my dog Lucky?';
-
 // Route to get an answer to the prompt
-router.get('/', async (req, res) => {
+router.get('/:question', async (req, res) => {
+    question = req.params.question;
+
     // Use Cohere NLP to generate response
     await (async () => {
         const response = await cohere.generate({ prompt: question });
