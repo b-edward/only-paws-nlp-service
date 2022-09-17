@@ -10,8 +10,7 @@ router.get('/:question', async (req, res) => {
     await (async () => {
         const response = await cohere.generate({ 
             prompt: question,
-            model: medium,
-            frequency_penalty: 0.75
+            model: medium
         });
         let generatedResponse = `${response.body.generations[0].text}`;
         res.status(200).json({response: generatedResponse});
