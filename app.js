@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require ('cors');
 const morgan = require('morgan');
-require('dotenv/config');
+//require('dotenv/config');
 
 // Allow http requests from any origin
 app.use(cors());    
