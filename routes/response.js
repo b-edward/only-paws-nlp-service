@@ -8,7 +8,11 @@ router.get('/:question', async (req, res) => {
     question = req.params.question;
     // Use Cohere NLP to generate response
     await (async () => {
-        const response = await cohere.generate({ prompt: question });
+        const response = await cohere.generate({ 
+            prompt: question,
+            model: medium,
+            frequency_penalty: 0.75
+        });
         let generatedResponse = `${response.body.generations[0].text}`;
         res.status(200).json({response: generatedResponse});
     })();
