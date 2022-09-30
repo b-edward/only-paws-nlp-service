@@ -10,3 +10,7 @@ This repo contains a service for the OnlyPaws application. It will take a string
 ### Main Project:
 
 https://github.com/carlotacb/only-paws/
+
+### Devpost:
+
+https://devpost.com/software/only-paws
